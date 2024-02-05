@@ -6,6 +6,16 @@ namespace StringCalculatorLib.Tests
         public class StringCalculatorTests
         {
             [Fact]
+            public void GivenNullStringZeroIsExpected()
+            {
+                string? input = null;
+                int expectedResult = 0;
+
+                var actualResult = StringCalculator.Add(input);
+
+                Assert.Equal(expectedResult, actualResult);
+            }
+            [Fact]
             public void GivenEmptyStringZeroIsExpected()
             {
                 // Arrange
