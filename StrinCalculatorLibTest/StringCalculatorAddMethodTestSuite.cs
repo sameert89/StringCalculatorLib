@@ -5,6 +5,14 @@ namespace StringCalculatorLib.Tests
     {
         public class StringCalculatorTests
         {
+            [Theory]
+            [InlineData("", 0)]
+            [InlineData("1,2", 3)]
+            public void GivenInputStringOutputIntegerExpected(string input, int expectedResult)
+            {
+                int actualResult = StringCalculator.Add(input);
+                Assert.Equal(expectedResult, actualResult);
+            }
             [Fact]
             public void GivenNullStringZeroIsExpected()
             {
